@@ -1,0 +1,10 @@
+_model: page
+---
+title: Validator
+---
+_template: validator.html
+---
+body: Enter an URL (or raw JSON) below.
+
+Note: The validator is also available as a standalone UI at
+[validator.spaceapi.io/ui/](https://validator.spaceapi.io/ui/) ([source](https://github.com/gidsi/spaceapi-validator-web)).

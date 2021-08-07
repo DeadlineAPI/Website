@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block title %}{{ this.title }}{% endblock %}
+{% block body %}
+<div class="appdetail">
+  <h2>
+    {{ this.title }}
+  </h2>
+  <p>
+    {{ this.description }}
+  </p>
+
+  {% if this.source_url %}
+    <h3>
+      Source Code
+    </h3>
+    <p>
+      <ul>
+        <li>
+          <a href="{{ this.source_url }}">
+            {{ this.source_label }}
+          </a>
+        </li>
+      </ul>
+    </p>
+  {% endif %}
+
+
+  <h3>
+    Categories
+  </h3>
+  <p>
+    <ul>
+    {% for item in this.category %}
+      <li>
+        {{ item }}
+      </li>
+    {% endfor %}
+    </ul>
+  </p>
+
+  <h3>
+    Author{% if this.author2 %}s{% endif %}
+  </h3>
+  <p>
+    This app was made by
+    {% if this.author_url %}<a href="{{ this.author_url }}">{% endif %}
+      {{ this.author }}
+    {% if this.author_url %}</a>{% endif %}
+    {% if this.author2 %}
+      and
+      {% if this.author2_url %}<a href="{{ this.author2_url }}">{% endif %}
+          {{ this.author2 }}
+      {% if this.author2_url %}</a>{% endif %}
+    {% endif %}
+
+    {% if this.attachments.images.count() %}
+      <h3>
+        Picture{% if this.attachments.images.count() > 1 %}s{% endif %} / Screenshot{% if this.attachments.images.count() > 1 %}s{% endif %}
+      </h3>
+      {% for image in this.attachments.images %}
+        <img src="{{ image|url }}">
+      {% endfor %}
+    {% endif %}
+  </p>
+</div>
+{% endblock %}

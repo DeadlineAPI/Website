@@ -1,0 +1,23 @@
+_model: page
+---
+title: How to provide an endpoint
+---
+body:
+
+If you want to implement the DeadlineAPI for your conference you need to do the following:
+* Host the JSON file and optionally a logo somewhere
+* Create a pull-request on the [directory repository](https://github.com/DeadlineAPI/directory) to register your endpoint to the directory.
+
+Add all fields you want to the json file. You can find the official fields in the [schema documentation](/docs). Feel free to add your own fields, but ideally prefix custom fields with `ext_` to mark them as extension fields. Otherwise you might have conflicts with later schema versions.
+
+Of course the fun starts with providing an endpoint with dynamic data. Either you can write a piece of software yourself or use [software](/software/) written by the DeadlineAPI community.
+
+### HTTP and CORS
+
+Your server should be reachable via HTTPS to prevent websites having problems with [mixed content warnings](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content).
+You should also provide [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) and [Content-type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) headers so that JavaScript based web applications can query your endpoint directly.
+
+### Don't want to run your own?
+In case you down want to run your own endpoint but still want to share deadlines with the community. We run our own endpoint under [endpoint.deadlineapi.org](https://endpoint.deadlineapi.org) and you can participate via PullRequest into the [endpoint GitHub repository](https://github.com/DeadlineAPI/Endpoint).
+
+

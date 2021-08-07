@@ -1,0 +1,27 @@
+<header id="header">
+  <div class="logocontainer">
+    <a href="/">
+      <img src="{{ '/static/images/logo-230px.png' | url }}" class="logo" alt="DeadlineAPI Logo">
+    </a>
+  </div>
+  <nav>
+    <ul>
+      <li{% if this._path == '/' %} class="active"{% endif %}>
+      <a href="{{ '/' | url }}">Home</a>
+      </li>
+      {% for href, title in [
+      ['/docs/', 'Documentation'],
+      ['/run-an-endpoint/', 'Provide an endpoint'],
+      ['/software/', 'Software'],
+      ['/history', 'History'],
+      ['https://github.com/DeadlineAPI', 'GitHub'],
+      ] %}
+      <li{% if this.is_child_of(href) %} class="active"{% endif %}>
+      <a href="{% if href.startswith('http') %}{{ href }}{% else %}{{ href | url }}{% endif %}">{{ title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <div id="navbg">
+  </div>
+</header>

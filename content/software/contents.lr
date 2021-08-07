@@ -1,0 +1,29 @@
+_model: page
+---
+title: Software based on DeadlineAPI
+---
+body:
+
+Due to the open, transparent and community driven design of DeadlineAPI everybody is able to write his or her own software for accessing deadline data via DeadlineAPI. But you are lucky; There is already a lot of software available by the community.
+
+Feel free to share and contribute too!
+{% from "macros/stuff.html" import render_stuff_list %}
+{{ render_stuff_list(site.query('/stuff')) }}
+
+In case you want to write your own stuff or you are just curious about how DeadlineAPI works, here are some details and hints on how to write software based on DeadlineAPI.
+
+### Static directory file
+
+The directory is essentially just a plain static JSON file on GitHub.
+
+You can access it through [directory.deadlineapi.org](https://directory.deadlineapi.org/). We will make sure that the static directory will be always reachable under that domain, even if we would switch away from GitHub in the future.
+
+You can also load the file from [github directly](https://raw.githubusercontent.com/DeadlineAPI/directory/master/directory.json), but please be aware that we don't have control over it there and your software might break if we ever need to move away from GitHub.
+
+### API
+
+The API is a service for interacting with the directory. By default it returns the directory in the same form as the [static file](#static-file), but filters the list to include only reachable and valid endpoints. Additionally it can give you a lot more information about entries that you might need.
+
+### Community
+
+We've created a [community organization on GitHub](https://github.com/DeadlineAPI-community) for software and libs around DeadlineAPI.

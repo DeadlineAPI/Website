@@ -1,0 +1,406 @@
+_model: page
+---
+title: Schema Documentation v0.1
+---
+body:
+
+This specification lists a number of standardized keys and values. It's highly
+recommended to stick to these fields and values.
+
+The full specification in the form of [JSON Schema](http://json-schema.org/) files 
+can be found in the [schema repository](https://github.com/DeadlineAPI/schema). Also we provide the recent schema files [here](https://schema.deadlineapi.org/).
+
+If you need other fields in addition to the ones specified here, and you think
+that the fields could be of use to others too, please make a change request in
+the [schema repository](https://github.com/DeadlineAPI/schema).
+
+If you still need to use non-standard fields, you should prefix them with
+`ext_` to make it clear the field is not part of the documented API. If you
+don't use that prefix, the fields will still be ignored by client
+implementations, but they may collide with fields that we might standardize in
+the future.
+
+Most types are not nullable. That means that they may not contain the value "null",
+but they may be left away if they're not required.
+
+We start with the specification of an endpoint.
+### Endpoint
+
+<ul class="group apidocs">
+<li><section class="item">
+<header>
+<h3>api</h3><span class="type">(string)</span>
+<span class="tag required">required</span>
+</header>
+<details class="togglable">
+<summary>Details</summary>
+<div>
+<p>The current version of this api. <code>0.1</code></p>
+</div></details>
+</section></li>
+
+<li><section class="item">
+<header>
+<h3>api_compatibility</h3><span class="type">(array of string)</span>
+</header>
+<details class="togglable">
+<summary>Details</summary>
+<div>
+<p>The versions your DeadlineAPI endpoint supports</p>
+<h4>Nested array items</h4>
+<span>string</span>
+<h4>Required item values</h4>
+<p>The array must contain the value
+<code>0.1</code>.</p>
+</div></details>
+</section></li>
+
+    <li>
+        <section class="item">
+            <header>
+                <h3>endpointname</h3><span class="type">(string)</span>
+            </header>
+            <details class="togglable">
+                <summary>Details</summary>
+                <div>
+                    <p>The name of the endpoint providing the list of deadlines</p>
+                </div>
+            </details>
+        </section>
+    </li>
+
+<li>
+        <section class="item">
+            <header>
+                <h3>endpointurl</h3><span class="type">(string)</span>
+            </header>
+            <details class="togglable">
+                <summary>Details</summary>
+                <div>
+                    <p>The URL of the endpoint providing the list of deadlines</p>
+                </div>
+            </details>
+        </section>
+    </li>
+
+<li>
+        <section class="item">
+            <header>
+                <h3>endpointlogo</h3><span class="type">(string)</span>
+            </header>
+            <details class="togglable">
+                <summary>Details</summary>
+                <div>
+                    <p>The URL to the endpoint providing institution's logo.</p>
+                </div>
+            </details>
+        </section>
+    </li>
+
+<li><section class="item">
+<header>
+<h3>deadlines</h3><span class="type">(array of DeadlineObjects)</span>
+<span class="tag required">required</span>
+</header>
+<details class="togglable">
+<summary>Details</summary>
+<div>
+<p>Here comes the list of deadline, as specified in the section below.</p>
+<h4>Nested array items</h4>
+<span>DeadlineObject</span>
+<h4>Required item values</h4>
+</div></details>
+</section></li>
+</ul>
+
+### DeadlineObject 
+Here follows the specification for the actual DeadlineObjects:
+
+<ul class="group apidocs">
+    <li>
+        <section class="item">
+            <header>
+                <h3>name</h3><span class="type">(string)</span>
+                <span class="tag required">required</span>
+            </header>
+            <details class="togglable">
+                <summary>Details</summary>
+                <div>
+                    <p>The name the conference.</p>
+                </div>
+            </details>
+        </section>
+    </li>
+
+<li>
+        <section class="item">
+            <header>
+                <h3>shortname</h3><span class="type">(string)</span>
+            </header>
+            <details class="togglable">
+                <summary>Details</summary>
+                <div>
+                    <p>The abbreviation of the conference's name.</p>
+                </div>
+            </details>
+        </section>
+    </li>
+
+    <li>
+        <section class="item">
+            <header>
+                <h3>logo</h3><span class="type">(string)</span>
+            </header>
+            <details class="togglable">
+                <summary>Details</summary>
+                <div>
+                    <p>URL to your space logo</p>
+                </div>
+            </details>
+        </section>
+    </li>
+
+    <li>
+        <section class="item">
+            <header>
+                <h3>cfpurl</h3><span class="type">(string)</span>
+            </header>
+            <details class="togglable">
+                <summary>Details</summary>
+                <div>
+                    <p>URL to the call for paper</p>
+                </div>
+            </details>
+        </section>
+    </li>
+    <li>
+        <section class="item">
+            <header>
+                <h3>confurl</h3><span class="type">(string)</span>
+            </header>
+            <details class="togglable">
+                <summary>Details</summary>
+                <div>
+                    <p>URL to the conference's call for paper</p>
+                </div>
+            </details>
+        </section>
+    </li>
+
+<li><section class="item">
+<header>
+<h3>categories</h3><span class="type">(array of string)</span>
+<span class="tag required">required</span>
+</header>
+<details class="togglable">
+<summary>Details</summary>
+<div>
+<p>Research fields covered by the conference.</p>
+<h4>Nested array items</h4>
+<span>string</span>
+ </details>
+        </section>
+    </li>
+
+    <li>
+        <section class="item">
+            <header>
+                <h3>location</h3><span class="type">(object)</span>
+                <span class="tag required">required</span>
+            </header>
+            <details class="togglable">
+                <summary>Details</summary>
+                <div>
+                    <p>Position data such as a postal address or geographic coordinates</p>
+                    <h4>Nested object properties</h4>
+                    <ul class="group">
+
+                        <li>
+                            <section class="item">
+                                <header>
+                                    <h3>virtual</h3><span class="type">(boolean)</span>
+<span class="tag required">required</span>
+                                </header>
+                                <details class="togglable">
+                                    <summary>Details</summary>
+                                    <div>
+                                        <p>Set to <code>true</code> if this conference is virtual only. <code>false</code> otherwise. If the conference is not virtual then the fields <code>country</code> and <code>city</code> are required.</p>
+                                    </div>
+                                </details>
+                            </section>
+                        </li>
+                        <li>
+                            <section class="item">
+                                <header>
+                                    <h3>country</h3><span class="type">(string)</span>
+<span class="tag conditionallyrequired">conditionally required</span>
+                                </header>
+                                <details class="togglable">
+                                    <summary>Details</summary>
+                                    <div>
+                                        <p>This field is only required if the conference is not <code>virtual</code>. The country in which the conference takes place</p>
+                                    </div>
+                                </details>
+                            </section>
+                        </li>
+
+                        <li>
+                            <section class="item">
+                                <header>
+                                    <h3>city</h3><span class="type">(string)</span>
+<span class="tag conditionallyrequired">conditionally required</span>
+                                </header>
+                                <details class="togglable">
+                                    <summary>Details</summary>
+                                    <div>
+                                        <p>This field is only required if the conference is not <code>virtual</code>. The city in which the conference takes place</p>
+                                    </div>
+                                </details>
+                            </section>
+                        </li>
+
+                        <li>
+                            <section class="item">
+                                <header>
+                                    <h3>lat</h3><span class="type">(number)</span>
+                                </header>
+                                <details class="togglable">
+                                    <summary>Details</summary>
+                                    <div>
+                                        <p>Latitude of the conference venue, in degree with decimal places. Use positive
+                                            values for locations north of the equator, negative values for locations
+                                            south of equator.</p>
+                                    </div>
+                                </details>
+                            </section>
+                        </li>
+                        <li>
+                            <section class="item">
+                                <header>
+                                    <h3>lon</h3><span class="type">(number)</span>
+                                </header>
+                                <details class="togglable">
+                                    <summary>Details</summary>
+                                    <div>
+                                        <p>Longitude of the conference venue, in degree with decimal places. Use
+                                            positive values for locations east of Greenwich, and negative values for
+                                            locations west of Greenwich.</p>
+                                    </div>
+                                </details>
+                            </section>
+                        </li>
+
+                        
+                    </ul>
+                </div>
+            </details>
+        </section>
+    </li>
+
+    <li>
+        <section class="item">
+            <header>
+                <h3>contact</h3><span class="type">(object)</span>
+                <span class="tag required">required</span>
+            </header>
+            <details class="togglable">
+                <summary>Details</summary>
+                <div>
+                    <p>Contact information about your space.</p>
+                    <h4>Nested object properties</h4>
+                    <ul class="group">
+                        <li>
+                            <section class="item">
+                                <header>
+                                    <h3>twitter</h3><span class="type">(string)</span>
+                                </header>
+                                <details class="togglable">
+                                    <summary>Details</summary>
+                                    <div>
+                                        <p>Twitter handle, with leading @</p>
+                                    </div>
+                                </details>
+                            </section>
+                        </li>
+                        <li>
+                            <section class="item">
+                                <header>
+                                    <h3>email</h3><span class="type">(string)</span>
+                                </header>
+                                <details class="togglable">
+                                    <summary>Details</summary>
+                                    <div>
+                                        <p>E-mail address for contacting the conference chair.</p>
+                                    </div>
+                                </details>
+                            </section>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+    </li>
+
+    <li>
+        <section class="item">
+            <header>
+                <h3>startdate</h3><span class="type">(string)</span>
+<span class="tag required">required</span>
+            </header>
+            <details class="togglable">
+                <summary>Details</summary>
+                <div>
+                    <p>The start date of the conference. In the following format <code>yyyy-MM-dd</code>. Example: <code>2021-08-06</code></p>
+                </div>
+            </details>
+        </section>
+    </li>
+    <li>
+        <section class="item">
+            <header>
+                <h3>enddate</h3><span class="type">(string)</span>
+            </header>
+            <details class="togglable">
+                <summary>Details</summary>
+                <div>
+                    <p>The end date of the conference. In the following format <code>yyyy-MM-dd</code>. Example: <code>2021-08-06</code>.</p>
+                </div>
+            </details>
+        </section>
+    </li>
+    <li>
+        <section class="item">
+            <header>
+                <h3>deadline</h3><span class="type">(string)</span>
+<span class="tag required">required</span>
+            </header>
+            <details class="togglable">
+                <summary>Details</summary>
+                <div>
+                    <p>The actual deadline of the conference or the workshop. In the following format <code>yyyy-MM-dd HH:mm:ss ZZZZ</code>. Example <code>2017-08-19 12:17:55 -0400</code>. Make sure to use the correct timezone.</p>
+                </div>
+            </details>
+        </section>
+    </li>
+
+    <li>
+        <section class="item">
+            <header>
+                <h3>pagelimit</h3><span class="type">(integer)</span>
+            </header>
+            <details class="togglable">
+                <summary>Details</summary>
+                <div>
+                    <p>The pagelimit, if available.</p>
+                </div>
+            </details>
+        </section>
+    </li>
+
+    
+ 
+</ul>
+---
+_discoverable: yes
+---
+_slug: docs
