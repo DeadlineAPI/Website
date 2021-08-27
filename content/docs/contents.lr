@@ -58,7 +58,7 @@ We start with the specification of an endpoint.
     <li>
         <section class="item">
             <header>
-                <h3>endpointname</h3><span class="type">(string)</span>
+                <h3>name</h3><span class="type">(string)</span>
             </header>
             <details class="togglable">
                 <summary>Details</summary>
@@ -72,7 +72,7 @@ We start with the specification of an endpoint.
 <li>
         <section class="item">
             <header>
-                <h3>endpointurl</h3><span class="type">(string)</span>
+                <h3>url</h3><span class="type">(string)</span>
             </header>
             <details class="togglable">
                 <summary>Details</summary>
@@ -86,7 +86,7 @@ We start with the specification of an endpoint.
 <li>
         <section class="item">
             <header>
-                <h3>endpointlogo</h3><span class="type">(string)</span>
+                <h3>logo</h3><span class="type">(string)</span>
             </header>
             <details class="togglable">
                 <summary>Details</summary>
@@ -371,13 +371,13 @@ Here follows the specification for the actual DeadlineObjects:
     <li>
         <section class="item">
             <header>
-                <h3>deadline</h3><span class="type">(string)</span>
+                <h3>deadlines</h3><span class="type">(array of string)</span>
 <span class="tag required">required</span>
             </header>
             <details class="togglable">
                 <summary>Details</summary>
                 <div>
-                    <p>The actual deadline of the conference or the workshop. In the following format <code>yyyy-MM-dd HH:mm:ss ZZZZ</code>. Example <code>2017-08-19 12:17:55 -0400</code>. Make sure to use the correct timezone.</p>
+                    <p>A list of the actual deadlines of the conference or the workshop. In the following format <code>yyyy-MM-dd HH:mm:ss ZZZZ</code>. Example <code>2017-08-19 12:17:55 -0400</code>. Make sure to use the correct timezone.</p>
                 </div>
             </details>
         </section>
