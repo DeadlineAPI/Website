@@ -6,7 +6,7 @@ The DeadlineAPI project provides a list of URLs (the [Directory](#directory)) of
 
 ### Directory
 
-The directory is a curated list of endpoints, each providing a JSON file based on the [Schema](#schema). In order to provide deadlines of your conferences on your own you need to run an endpoint and add your endpoint to the directory. This can be done by a pull request on [Github](https://github.com/deadlineapi/directory). The directory is provided [here](https://directory.deadlineapi.org/) but you can also query Github directly: [Link](https://raw.githubusercontent.com/DeadlineAPI/Directory/master/directory.json). Another option is to add your deadlines to an already existing endpoint. E.g. we run one [here](endpoint.deadlineapi.org).
+The directory is a curated list of endpoints, each providing a JSON file based on the [Schema](#schema). In order to provide deadlines of your conferences on your own you need to run an endpoint and add your endpoint to the directory. This can be done by a pull request on [Github](https://github.com/deadlineapi/directory). The directory is provided [here](https://directory.deadlineapi.org/) but you can also query Github directly: [Link](https://raw.githubusercontent.com/DeadlineAPI/Directory/master/directory.json). Another option is to add your deadlines to an already existing endpoint. E.g. we run one [here](https://endpoint.deadlineapi.org/).
 
   *  Invalid URLs will be removed from time to time (404, 503, etc)
 
