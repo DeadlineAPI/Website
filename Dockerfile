@@ -14,10 +14,10 @@ RUN cd /code && lektor build -f scsscompile --output-path /code/output
 FROM nginx:1.19-alpine as server
 
 RUN apk --update --no-cache add curl
-HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
+HEALTHCHECK CMD curl --fail http://localhost:8081 || exit 1
 
 RUN rm -Rf /usr/share/nginx/html
 COPY --from=builder /code/output /usr/share/nginx/html
 COPY configs/nginx.conf /etc/nginx/nginx.conf
-EXPOSE 8080
+EXPOSE 8081
 USER nginx
