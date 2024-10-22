@@ -1,7 +1,20 @@
 # DeadlineAPI - Website
 
 
-## Install
+## Install Locally
+
+Install [Lektor](https://pypi.org/project/Lektor/):
+```
+pip install Lektor
+```
+
+Then run  
+```
+lektor server -f scsscompile
+```
+to start the lektor build process.
+
+## Run via Docker
 
 The webpage runs in docker:
 ```bash
