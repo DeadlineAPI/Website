@@ -1,6 +1,6 @@
 # DeadlineAPI - Website
 
-[![GitHub CI][ci-badge]][ci]
+![GitHub CI][ci-badge]
 
 ## Install
 Follows
