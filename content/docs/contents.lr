@@ -4,26 +4,18 @@ title: Schema Documentation v0.1
 ---
 body:
 
-This specification lists a number of standardized keys and values. It's highly
-recommended to stick to these fields and values.
+This specification lists a number of standardized keys and values. It's highly recommended to stick to these fields and values.
 
-The full specification in the form of [JSON Schema](http://json-schema.org/) files 
-can be found in the [schema repository](https://github.com/DeadlineAPI/schema). Also we provide the recent schema file [here](https://github.com/DeadlineAPI/Schema/blob/master/schema_0.1.json).
+The full specification in the form of [JSON Schema](http://json-schema.org/) files can be found in the [schema repository](https://github.com/DeadlineAPI/schema). Also we provide the recent schema file [here](https://github.com/DeadlineAPI/Schema/blob/master/schema_0.1.json).
 
-If you need other fields in addition to the ones specified here, and you think
-that the fields could be of use to others too, please make a change request in
-the [schema repository](https://github.com/DeadlineAPI/schema).
+If you need other fields in addition to the ones specified here, and you think that the fields could be useful to others, please make a change request in the [schema repository](https://github.com/DeadlineAPI/schema).
 
-If you still need to use non-standard fields, you should prefix them with
-`ext_` to make it clear the field is not part of the documented API. If you
-don't use that prefix, the fields will still be ignored by client
-implementations, but they may collide with fields that we might standardize in
-the future.
+If you still need to use non-standard fields, you should prefix them with `ext_` to make it clear that the field is not part of the documented API. If you don't use that prefix, the fields will still be ignored by client implementations, but they may collide with fields that we might standardize in the future.
 
-Most types are not nullable. That means that they may not contain the value "null",
-but they may be left away if they're not required.
+Most types are not nullable. That means that they may not contain the value "null", but they may be left away if they're not required.
 
 We start with the specification of an endpoint.
+
 ### Endpoint
 
 <ul class="group apidocs">

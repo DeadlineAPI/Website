@@ -2,19 +2,19 @@ title: DeadlineAPI
 ---
 body:
 
-The DeadlineAPI project provides a list of URLs (the [Directory](#directory)) of endpoints which implement the DeadlineAPI [Schema](#schema). This are universities that maintain deadline files or conferences doing this on their own.
+The DeadlineAPI project provides a list of URLs (the [Directory](#directory)) of endpoints which implement the DeadlineAPI [Schema](#schema). This can be universities maintaining endpoints or conferences doing this on their own. 
 
 ### Directory
 
-The directory is a curated list of endpoints, each providing a JSON file based on the [Schema](#schema). In order to provide deadlines of your conferences on your own you need to run an endpoint and add your endpoint to the directory. This can be done by a pull request on [Github](https://github.com/deadlineapi/directory). The directory is provided [here](https://directory.deadlineapi.org/) but you can also query Github directly: [Link](https://raw.githubusercontent.com/DeadlineAPI/Directory/master/directory.json). Another option is to add your deadlines to an already existing endpoint. E.g. we run one [here](https://endpoint.deadlineapi.org/).
+The directory is a curated list of endpoints, each providing a JSON file based on the [Schema](#schema). In order to provide deadlines of your conferences on your own you need to run an endpoint and add your endpoint to the directory. This can be done via a pull request on [Github](https://github.com/deadlineapi/directory). The directory is provided statically [here](https://directory.deadlineapi.org/) but you can also be queried from Github directly via [directory.json](https://raw.githubusercontent.com/DeadlineAPI/Directory/master/directory.json). Another option is to add your deadlines to an already existing endpoint. E.g., we run one [here](https://endpoint.deadlineapi.org/). Currently the endpoint is under mainenance, though.
 
-  *  Invalid URLs will be removed from time to time (404, 503, etc)
+  *  Invalid URLs will be removed from the directory time to time (404, 503, etc.).
 
 ### Schema
 
-A standardized JSON file format that can be used to present deadlines for conferences and workshops, especially academic but also other conferences. The specification uses [JSON Schema](https://json-schema.org/). Due to this easy format bridges to every imaginable format can be written and provided as endpoint.
+The schema is a standardized JSON file format that can be used to present deadlines for conferences and workshops, especially academic but also other conferences. The specification uses [JSON Schema](https://json-schema.org/). Due to this easy format every imaginable format can be bridged easily and be provided as an endpoint.
 
-The following example shows how such an endpoint can look like (incl. some optional fields):
+The following example shows how such an endpoint can look like (incl. some optional fields). A full documentation of all fields, though, can be found in the [documentation](/docs/).
 
 ```json
 { 
@@ -72,6 +72,6 @@ The following example shows how such an endpoint can look like (incl. some optio
 
 ```
 
-A full documentation of all fields can be found in the [schema documentation](/docs/)
+
 
 

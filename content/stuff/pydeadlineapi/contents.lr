@@ -4,7 +4,7 @@ title: pyDeadlineAPI
 ---
 author: noppelmax
 ---
-description: pyDeadlineAPI is a simple but jet powerful python lib to load a directory and deadlines into python. Run <code>pip install pyDeadlineAPI</code> to install this library into your environment.
+description: pyDeadlineAPI is a simple but jet powerful python lib to load a directory and deadlines into python. Run `pip install pyDeadlineAPI` to install this library into your environment.
 ---
 source_label: GitHub
 ---
